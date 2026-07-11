@@ -358,12 +358,13 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 /* дилер — игральная карта «Дама бубён» */
 .dealer-avatar { flex: none; position: relative; }
 .dealer-qcard {
-  width: clamp(78px, 17dvh, 112px);
-  aspect-ratio: 118 / 165; height: auto;
+  width: clamp(76px, 16vh, 104px);
+  width: clamp(76px, 16dvh, 104px);
+  aspect-ratio: 5 / 7; height: auto;
   background: #f7f2e6;
   border: 1.5px solid #d8cdb2;
   border-radius: 10px;
-  padding: clamp(16px, 3.4dvh, 22px) clamp(7px, 1.5dvh, 10px);
+  position: relative;
   box-shadow: 0 0 0 2.5px rgba(201,162,75,.45), 0 12px 30px rgba(0,0,0,.55);
   transform: rotate(-4deg);
   transition: transform .3s;
@@ -371,7 +372,11 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 }
 .dealer-qcard:hover { transform: rotate(0) scale(1.04); animation-play-state: paused; }
 .dealer-qcard img {
-  width: 100%; height: 100%; object-fit: cover;
+  /* рамка в процентах от самой карты: явные размеры, т.к. img не растягивается по inset */
+  position: absolute; top: 12.5%; left: 9%;
+  width: 82%; height: 75%;
+  object-fit: cover;
+  object-position: 50% 28%; /* фокус на лице */
   border-radius: 4px;
   border: 1.5px solid var(--gold);
   box-shadow: inset 0 0 0 1px rgba(201,162,75,.3);
@@ -476,7 +481,7 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 
 /* очень низкие окна: ужимаем дилера и отступы ещё сильнее */
 @media (max-height: 640px) {
-  .dealer-qcard { width: clamp(56px, 12dvh, 76px); }
+  .dealer-qcard { width: clamp(56px, 12dvh, 72px); }
   .poker__dealer { margin-bottom: 4px; gap: 10px; }
   .poker__speech { min-height: 32px; padding: 7px 12px; }
   .pcard { height: clamp(40px, 8.5dvh, 58px); }
@@ -511,6 +516,6 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
   .gallery__item img { height: 190px; }
   .poker__hand-label { width: auto; }
   .poker__table { padding-inline: 10px; }
-  .dealer-qcard { width: clamp(64px, 15dvh, 92px); }
+  .dealer-qcard { width: clamp(64px, 14dvh, 86px); }
   .booking::before { font-size: 16rem; }
 }

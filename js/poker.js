@@ -96,6 +96,7 @@ function render(revealDealer) {
   $("playerCards").innerHTML = playerHand.map(c => cardHTML(c)).join("");
   $("dealerCards").innerHTML = dealerHand.map(c => cardHTML(c, !revealDealer)).join("");
   $("boardCards").innerHTML = board.map(c => cardHTML(c)).join("");
+  updateCombos(revealDealer);
 }
 
 // ---------- оценка руки: лучшие 5 из 7 ----------
@@ -128,17 +129,49 @@ function score5(cards) {
   return [0, ...rs];
 }
 
-function best7(cards7) {
+// лучшая комбинация из любого числа карт (2–7)
+function bestAny(cards) {
+  if (cards.length === 2) {
+    const [a, b] = cards;
+    if (a.r === b.r) return [1, a.r, a.r];
+    return [0, Math.max(a.r, b.r), Math.min(a.r, b.r)];
+  }
+  if (cards.length === 5) return score5(cards);
+  const n = cards.length;
   let best = null;
-  for (let a = 0; a < 3; a++)
-    for (let b = a + 1; b < 4; b++)
-      for (let c = b + 1; c < 5; c++)
-        for (let d = c + 1; d < 6; d++)
-          for (let e = d + 1; e < 7; e++) {
-            const s = score5([cards7[a], cards7[b], cards7[c], cards7[d], cards7[e]]);
+  for (let a = 0; a < n - 4; a++)
+    for (let b = a + 1; b < n - 3; b++)
+      for (let c = b + 1; c < n - 2; c++)
+        for (let d = c + 1; d < n - 1; d++)
+          for (let e = d + 1; e < n; e++) {
+            const s = score5([cards[a], cards[b], cards[c], cards[d], cards[e]]);
             if (!best || cmp(s, best) > 0) best = s;
           }
   return best;
+}
+const best7 = bestAny;
+
+// человекочитаемое описание комбинации
+function describe(s) {
+  const r = x => RANKS[x - 2];
+  switch (s[0]) {
+    case 8: return s[1] === 14 ? "Роял-флеш!" : "Стрит-флеш до " + r(s[1]);
+    case 7: return "Каре · " + r(s[1]);
+    case 6: return "Фулл-хаус · " + r(s[1]);
+    case 5: return "Флеш";
+    case 4: return "Стрит до " + r(s[1]);
+    case 3: return "Сет · " + r(s[1]);
+    case 2: return "Две пары · " + r(s[1]) + " и " + r(s[3]);
+    case 1: return "Пара · " + r(s[1]);
+    default: return "Старшая карта · " + r(s[1]);
+  }
+}
+
+function updateCombos(revealDealer) {
+  $("playerCombo").textContent = playerHand.length
+    ? "У вас: " + describe(bestAny([...playerHand, ...board])) : "";
+  $("dealerCombo").textContent = revealDealer && dealerHand.length
+    ? "У дилера: " + describe(bestAny([...dealerHand, ...board])) : "";
 }
 function cmp(a, b) {
   for (let i = 0; i < Math.max(a.length, b.length); i++) {

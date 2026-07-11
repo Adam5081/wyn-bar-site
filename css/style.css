@@ -417,6 +417,11 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
   color: rgba(242,234,216,.6); width: 52px; text-align: right;
 }
 .poker__board { display: flex; justify-content: center; }
+.poker__combo {
+  text-align: center; min-height: 1.1em;
+  font-size: .8rem; font-style: italic; font-weight: 600;
+  color: var(--gold); letter-spacing: .03em;
+}
 .cards { display: flex; gap: 8px; min-height: 74px; align-items: center; }
 
 .pcard {

@@ -332,18 +332,18 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 /* =========================================================
    POKER EASTER EGG
    ========================================================= */
-.poker { position: fixed; inset: 0; z-index: 200; display: none; }
-.poker.open { display: block; }
+.poker { position: fixed; inset: 0; z-index: 200; display: none; align-items: center; justify-content: center; padding: 8px; }
+.poker.open { display: flex; }
 .poker__backdrop { position: absolute; inset: 0; background: rgba(5,7,6,.8); backdrop-filter: blur(8px); }
 .poker__room {
-  position: relative; margin: 3vh auto; width: min(680px, 94%);
-  max-height: 94vh; overflow-y: auto;
+  position: relative; width: min(680px, 96%);
+  max-height: calc(100dvh - 16px); overflow-y: auto;
   background:
     radial-gradient(ellipse at 50% 0%, rgba(201,162,75,.12), transparent 60%),
     linear-gradient(170deg, #10231f, #0a1512);
   border: 1px solid rgba(201,162,75,.4);
   border-radius: 22px;
-  padding: 28px clamp(16px, 4vw, 40px) 22px;
+  padding: 16px clamp(14px, 3.5vw, 32px) 12px;
   box-shadow: 0 30px 90px rgba(0,0,0,.7);
   animation: pokerIn .4s ease;
 }
@@ -354,15 +354,16 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 }
 .poker__close:hover { color: var(--cream); }
 
-.poker__dealer { display: flex; align-items: center; gap: 18px; margin-bottom: 10px; }
+.poker__dealer { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
 /* дилер — игральная карта «Дама бубён» */
 .dealer-avatar { flex: none; position: relative; }
 .dealer-qcard {
-  width: 118px; height: 165px;
+  width: clamp(78px, 17dvh, 112px);
+  aspect-ratio: 118 / 165; height: auto;
   background: #f7f2e6;
   border: 1.5px solid #d8cdb2;
   border-radius: 10px;
-  padding: 24px 10px;
+  padding: clamp(16px, 3.4dvh, 22px) clamp(7px, 1.5dvh, 10px);
   box-shadow: 0 0 0 2.5px rgba(201,162,75,.45), 0 12px 30px rgba(0,0,0,.55);
   transform: rotate(-4deg);
   transition: transform .3s;
@@ -376,22 +377,22 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
   box-shadow: inset 0 0 0 1px rgba(201,162,75,.3);
 }
 .dealer-qcard__index {
-  position: absolute; top: 4px; left: 7px;
+  position: absolute; top: 3px; left: 6px;
   color: #b3122f;
   font-family: var(--font-display);
-  font-weight: 900; font-size: 1.05rem; line-height: .8;
+  font-weight: 900; font-size: clamp(.8rem, 1.8dvh, 1rem); line-height: .8;
   display: flex; flex-direction: column; align-items: center;
 }
-.dealer-qcard__index em { font-style: normal; font-size: .8rem; }
+.dealer-qcard__index em { font-style: normal; font-size: .75em; }
 .dealer-qcard__index--bottom { top: auto; left: auto; bottom: 4px; right: 7px; transform: rotate(180deg); }
 @keyframes cardWiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(2deg); } }
 
 .poker__speech {
   position: relative;
   background: rgba(242,234,216,.96); color: #1c1a14;
-  border-radius: 14px; padding: 13px 18px;
-  font-size: .95rem; font-weight: 600;
-  min-height: 48px; flex: 1;
+  border-radius: 12px; padding: 10px 14px;
+  font-size: clamp(.8rem, 1.7dvh, .92rem); font-weight: 600;
+  min-height: 38px; flex: 1;
   box-shadow: 0 8px 24px rgba(0,0,0,.35);
 }
 .poker__speech::before {
@@ -402,35 +403,37 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 .poker__table {
   background:
     radial-gradient(ellipse at 50% 40%, #1b5c47, #123c33 70%);
-  border: 6px solid #2a1c10;
+  border: 5px solid #2a1c10;
   outline: 2px solid rgba(201,162,75,.5);
-  border-radius: 90px;
-  padding: 18px 22px;
-  display: grid; gap: 10px;
+  border-radius: clamp(28px, 6dvh, 56px);
+  padding: clamp(8px, 1.6dvh, 14px) 18px;
+  display: grid; gap: clamp(3px, .8dvh, 8px);
   box-shadow: inset 0 0 60px rgba(0,0,0,.45);
 }
 .poker__hand { display: flex; align-items: center; gap: 14px; }
 .poker__hand--dealer { justify-content: center; }
 .poker__hand--player { justify-content: center; }
 .poker__hand-label {
-  font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+  font-size: .68rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
   color: rgba(242,234,216,.6); width: 52px; text-align: right;
 }
 .poker__board { display: flex; justify-content: center; }
 .poker__combo {
   text-align: center; min-height: 1.1em;
-  font-size: .8rem; font-style: italic; font-weight: 600;
+  font-size: clamp(.7rem, 1.5dvh, .8rem); font-style: italic; font-weight: 600;
   color: var(--gold); letter-spacing: .03em;
 }
-.cards { display: flex; gap: 8px; min-height: 74px; align-items: center; }
+.cards { display: flex; gap: clamp(5px, 1dvh, 8px); min-height: clamp(48px, 9.5dvh, 68px); align-items: center; }
 
 .pcard {
-  width: 50px; height: 72px; border-radius: 7px;
+  height: clamp(46px, 9.5dvh, 66px);
+  aspect-ratio: 25 / 36; width: auto;
+  border-radius: 6px;
   background: #f7f2e6;
   border: 1px solid #d8cdb2;
   display: flex; flex-direction: column; justify-content: space-between;
-  padding: 5px 6px;
-  font-weight: 800; font-size: 1.05rem; line-height: 1;
+  padding: 4px 5px;
+  font-weight: 800; font-size: clamp(.72rem, 1.8dvh, .95rem); line-height: 1;
   box-shadow: 0 4px 12px rgba(0,0,0,.4);
   animation: dealIn .45s cubic-bezier(.2,.9,.3,1.2);
   position: relative;
@@ -448,25 +451,40 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 .pcard--back::after {
   content: "♠"; position: absolute; inset: 0;
   display: grid; place-items: center;
-  color: rgba(201,162,75,.75); font-size: 1.5rem;
+  color: rgba(201,162,75,.75); font-size: clamp(1rem, 2.4dvh, 1.3rem);
 }
 .pcard--win { box-shadow: 0 0 0 2.5px var(--gold), 0 4px 18px rgba(201,162,75,.5); }
 
-.poker__controls { display: flex; gap: 12px; justify-content: center; margin-top: 18px; }
+.poker__controls { display: flex; gap: 10px; justify-content: center; margin-top: clamp(8px, 1.6dvh, 14px); }
+.poker__controls .btn { padding: clamp(8px, 1.6dvh, 12px) 24px; font-size: .88rem; }
 .poker__result {
-  margin-top: 16px; text-align: center;
+  margin-top: 10px; text-align: center;
   background: rgba(201,162,75,.1);
   border: 1px dashed rgba(201,162,75,.55);
-  border-radius: 14px; padding: 18px;
+  border-radius: 12px; padding: 10px 14px;
 }
-.poker__result h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--gold); margin-bottom: 6px; }
+.poker__result h3 { font-family: var(--font-display); font-size: clamp(1.05rem, 2.2dvh, 1.3rem); color: var(--gold); margin-bottom: 3px; }
 .poker__result .promo {
-  font-size: 1.3rem; font-weight: 800; letter-spacing: .12em;
+  font-size: clamp(.95rem, 2dvh, 1.15rem); font-weight: 800; letter-spacing: .12em;
   color: var(--cream); background: rgba(0,0,0,.35);
-  display: inline-block; padding: 8px 18px; border-radius: 8px; margin-top: 8px;
+  display: inline-block; padding: 5px 14px; border-radius: 8px; margin-top: 4px;
 }
-.poker__result p { color: #cfd8d2; font-size: .92rem; margin-top: 8px; }
-.poker__disclaimer { margin-top: 14px; text-align: center; color: var(--muted); font-size: .76rem; }
+.poker__result p { color: #cfd8d2; font-size: clamp(.74rem, 1.5dvh, .85rem); margin-top: 4px; }
+.poker__disclaimer { margin-top: 8px; text-align: center; color: var(--muted); font-size: .68rem; }
+/* когда показан результат, дисклеймер убираем — экономим высоту */
+.poker__room:has(#pokerResult:not([hidden])) .poker__disclaimer { display: none; }
+
+/* очень низкие окна: ужимаем дилера и отступы ещё сильнее */
+@media (max-height: 640px) {
+  .dealer-qcard { width: clamp(56px, 12dvh, 76px); }
+  .poker__dealer { margin-bottom: 4px; gap: 10px; }
+  .poker__speech { min-height: 32px; padding: 7px 12px; }
+  .pcard { height: clamp(40px, 8.5dvh, 58px); }
+  .cards { min-height: clamp(42px, 8.5dvh, 60px); }
+  .poker__result { margin-top: 6px; padding: 7px 12px; }
+  .poker__result p { margin-top: 2px; }
+  .poker__controls { margin-top: 6px; }
+}
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
@@ -491,9 +509,8 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
   .info__grid { grid-template-columns: 1fr; gap: 20px; }
   .form__row { grid-template-columns: 1fr; gap: 0; }
   .gallery__item img { height: 190px; }
-  .poker__dealer { flex-direction: column; text-align: center; }
-  .poker__speech::before { display: none; }
   .poker__hand-label { width: auto; }
-  .pcard { width: 42px; height: 62px; font-size: .9rem; }
+  .poker__table { padding-inline: 10px; }
+  .dealer-qcard { width: clamp(64px, 15dvh, 92px); }
   .booking::before { font-size: 16rem; }
 }

@@ -250,7 +250,7 @@ function showdown() {
   const ps = best7([...playerHand, ...board]);
   const ds = best7([...dealerHand, ...board]);
   const diff = cmp(ps, ds);
-  const handName = HAND_NAMES[ps[0]];
+  const handName = describe(ps);
 
   if (diff > 0) {
     // скидка по силе руки: до пары — 5%, две пары/сет — 10%, стрит и выше — 15%
@@ -269,7 +269,7 @@ function showdown() {
     dealerWink();
     resultEl.innerHTML = `
       <h3>Дилер берёт банк</h3>
-      <p>Рука дилера: <strong>${HAND_NAMES[ds[0]]}</strong> против вашей: <strong>${handName}</strong></p>
+      <p>Рука дилера: <strong>${describe(ds)}</strong> против вашей: <strong>${handName}</strong></p>
       <p>Реванш? Колода уже перетасована.</p>`;
   } else {
     say(SPEECH.tie);

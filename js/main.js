@@ -82,6 +82,13 @@ function renderMenu(cat) {
 renderMenu(Object.keys(MENU)[0]);
 
 // ---------- бронь через WhatsApp ----------
+// нельзя выбрать прошедшую дату (локальное время, не UTC)
+(function setMinDate() {
+  const d = new Date();
+  d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+  document.querySelector('#bookingForm input[name="date"]').min = d.toISOString().slice(0, 10);
+})();
+
 document.getElementById("bookingForm").addEventListener("submit", e => {
   e.preventDefault();
   const f = new FormData(e.target);

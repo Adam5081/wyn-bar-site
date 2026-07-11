@@ -35,6 +35,7 @@ a:hover { color: #e6c976; }
 
 .container { width: min(1160px, 92%); margin: 0 auto; }
 .section { padding: 96px 0; }
+section { scroll-margin-top: 64px; } /* якоря не прячутся под фиксированной шапкой */
 
 .section__title {
   font-family: var(--font-display);

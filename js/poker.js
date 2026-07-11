@@ -28,6 +28,16 @@ const SPEECH = {
 let deck, playerHand, dealerHand, board, stage;
 
 const $ = id => document.getElementById(id);
+const WINK_SRC = "img/dealer-wink.jpg";
+new Image().src = WINK_SRC; // прогреваем кэш, чтобы подмигивание не мигало загрузкой
+
+function dealerWink() {
+  const img = document.querySelector("#dealerAvatar img");
+  if (!img) return;
+  const base = img.src;
+  img.src = WINK_SRC;
+  setTimeout(() => { img.src = base; }, 1400);
+}
 const pokerEl = $("poker");
 const speechEl = $("dealerSpeech");
 const actionBtn = $("pokerAction");
@@ -223,6 +233,7 @@ function showdown() {
     document.querySelectorAll("#playerCards .pcard").forEach(c => c.classList.add("pcard--win"));
   } else if (diff < 0) {
     say(SPEECH.lose);
+    dealerWink();
     resultEl.innerHTML = `
       <h3>Дилер берёт банк</h3>
       <p>Рука дилера: <strong>${HAND_NAMES[ds[0]]}</strong> против вашей: <strong>${handName}</strong></p>

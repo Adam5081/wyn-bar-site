@@ -218,43 +218,46 @@
       <div class="poker__dealer">
         <div class="dealer-avatar" id="dealerAvatar">
           <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-label="Дилер">
-            <!-- hair back -->
-            <path d="M55 78 Q50 30 100 26 Q150 30 145 78 L148 132 Q149 150 138 158 L62 158 Q51 150 52 132 Z" fill="#16100e"/>
-            <!-- neck -->
-            <rect x="88" y="120" width="24" height="28" rx="10" fill="#e8b98f"/>
-            <!-- face -->
-            <ellipse cx="100" cy="88" rx="34" ry="40" fill="#f3c9a0"/>
-            <!-- hair front -->
-            <path d="M66 80 Q64 40 100 36 Q136 40 134 80 Q126 62 112 58 Q120 74 114 84 Q108 60 88 56 Q70 62 66 80 Z" fill="#16100e"/>
-            <!-- earrings -->
-            <circle cx="66" cy="102" r="4" fill="#d9b45b"/>
-            <circle cx="134" cy="102" r="4" fill="#d9b45b"/>
-            <!-- eyes -->
+            <!-- волосы: светлый низкий пучок -->
+            <circle cx="100" cy="52" r="16" fill="#c68f3f"/>
+            <path d="M58 82 Q54 32 100 28 Q146 32 142 82 L143 110 Q143 124 134 130 L66 130 Q57 124 57 110 Z" fill="#d9a441"/>
+            <!-- шея -->
+            <rect x="88" y="118" width="24" height="30" rx="10" fill="#e8b98f"/>
+            <!-- лицо -->
+            <ellipse cx="100" cy="88" rx="33" ry="39" fill="#f3c9a0"/>
+            <!-- волосы спереди: гладко назад, лёгкий пробор -->
+            <path d="M67 78 Q66 42 100 38 Q134 42 133 78 Q128 58 104 54 Q102 50 100 48 Q98 50 96 54 Q72 58 67 78 Z" fill="#d9a441"/>
+            <path d="M96 54 Q100 46 104 54 Q100 52 96 54 Z" fill="#c68f3f"/>
+            <!-- серьги-кольца -->
+            <circle cx="67" cy="104" r="5" fill="none" stroke="#d9b45b" stroke-width="2.2"/>
+            <circle cx="133" cy="104" r="5" fill="none" stroke="#d9b45b" stroke-width="2.2"/>
+            <!-- глаза -->
             <g class="dealer-eyes">
               <ellipse cx="86" cy="88" rx="6" ry="4.5" fill="#fff"/>
               <ellipse cx="114" cy="88" rx="6" ry="4.5" fill="#fff"/>
-              <circle cx="86" cy="88.5" r="2.6" fill="#274e43"/>
-              <circle cx="114" cy="88.5" r="2.6" fill="#274e43"/>
+              <circle cx="86" cy="88.5" r="2.6" fill="#5b3a21"/>
+              <circle cx="114" cy="88.5" r="2.6" fill="#5b3a21"/>
               <rect class="dealer-lid" x="78" y="80" width="16" height="0" rx="3" fill="#f3c9a0"/>
               <rect class="dealer-lid" x="106" y="80" width="16" height="0" rx="3" fill="#f3c9a0"/>
             </g>
-            <!-- brows -->
-            <path d="M78 78 Q86 74 94 77" stroke="#241a15" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-            <path d="M106 77 Q114 74 122 78" stroke="#241a15" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-            <!-- nose + lips -->
+            <!-- брови -->
+            <path d="M78 78 Q86 74 94 77" stroke="#8a6428" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M106 77 Q114 74 122 78" stroke="#8a6428" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <!-- нос и улыбка -->
             <path d="M100 92 Q98 100 100 104" stroke="#d9a273" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path class="dealer-lips" d="M90 112 Q100 120 110 112 Q100 116 90 112 Z" fill="#b3122f"/>
-            <!-- dress -->
-            <path d="M60 218 Q62 160 88 148 L100 156 L112 148 Q138 160 140 218 Z" fill="#123c36"/>
-            <path d="M88 148 L100 156 L112 148 L106 170 L94 170 Z" fill="#0c2a26"/>
-            <!-- bow tie -->
-            <path d="M100 150 L88 144 L88 158 Z" fill="#b3122f"/>
-            <path d="M100 150 L112 144 L112 158 Z" fill="#b3122f"/>
-            <circle cx="100" cy="151" r="3" fill="#d9b45b"/>
-            <!-- card in hand -->
+            <path class="dealer-lips" d="M89 111 Q100 121 111 111 Q100 116 89 111 Z" fill="#b3122f"/>
+            <!-- чёрный жакет с лацканами -->
+            <path d="M58 218 Q60 158 87 146 L100 158 L113 146 Q140 158 142 218 Z" fill="#141414"/>
+            <path d="M87 146 L100 158 L94 176 L84 158 Z" fill="#242424"/>
+            <path d="M113 146 L100 158 L106 176 L116 158 Z" fill="#242424"/>
+            <path d="M96 158 L100 154 L104 158 L104 190 L96 190 Z" fill="#e8b98f"/>
+            <!-- золотая пуговица -->
+            <circle cx="100" cy="196" r="3.5" fill="#d9b45b"/>
+            <!-- карта в руке + золотые часы -->
             <g class="dealer-card-hand">
               <rect x="146" y="160" width="34" height="48" rx="5" fill="#f7f2e6" stroke="#c9a24b" stroke-width="1.5" transform="rotate(12 163 184)"/>
               <text x="156" y="186" font-size="20" fill="#b3122f" transform="rotate(12 163 184)">♥</text>
+              <rect x="138" y="196" width="14" height="6" rx="3" fill="#d9b45b" transform="rotate(12 145 199)"/>
             </g>
           </svg>
         </div>

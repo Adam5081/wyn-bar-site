@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WYN Social Bar — лаундж-бар в Астане</title>
+  <meta name="description" content="WYN Social Bar — лаундж-бар и спорт-бар в Астане. Стейки, коктейли, спортивные трансляции, бильярд, настольные игры, VIP-зал. Ул. Турар Рыскулов, 1.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♠</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-suit">♠</span>
+        <span class="nav__logo-text">WYN</span>
+        <span class="nav__logo-sub">social bar</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">О нас</a>
+        <a href="#news">Акции</a>
+        <a href="#menu">Меню</a>
+        <a href="#gallery">Атмосфера</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="#booking" class="btn btn--gold nav__cta">Забронировать</a>
+      <button class="nav__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero__bg"></div>
+    <div class="hero__suits" aria-hidden="true">
+      <span>♠</span><span>♥</span><span>♦</span><span>♣</span><span>♠</span><span>♦</span>
+    </div>
+    <div class="hero__content container">
+      <p class="hero__kicker">Лаундж-бар · Спорт-бар · Игры · Астана</p>
+      <h1 class="hero__title">WYN<br><em>Social Bar</em></h1>
+      <p class="hero__lead">Место, где вечер превращается в игру: стейки и коктейли, большой экран для матчей, бильярд и настольные игры — всё под одной крышей.</p>
+      <div class="hero__actions">
+        <a href="#booking" class="btn btn--gold">Забронировать стол</a>
+        <a href="#menu" class="btn btn--ghost">Смотреть меню</a>
+      </div>
+      <div class="hero__status" id="openStatus"></div>
+    </div>
+    <a href="#info" class="hero__scroll" aria-label="Вниз">▾</a>
+  </section>
+
+  <!-- ===== INFO STRIP ===== -->
+  <section class="info" id="info">
+    <div class="container info__grid">
+      <div class="info__item">
+        <div class="info__icon">♦</div>
+        <div>
+          <h3>Адрес</h3>
+          <p>ул. Турар Рыскулов, 1<br>Есиль район, Астана</p>
+        </div>
+      </div>
+      <div class="info__item">
+        <div class="info__icon">♣</div>
+        <div>
+          <h3>Часы работы</h3>
+          <p>Пн–Чт 13:00–02:00 · Пт 13:00–04:00<br>Сб 15:00–04:00 · Вс 15:00–02:00</p>
+        </div>
+      </div>
+      <div class="info__item">
+        <div class="info__icon">♥</div>
+        <div>
+          <h3>Связь</h3>
+          <p><a href="tel:+77712569135">+7 771 256 91 35</a><br>
+          <a href="https://instagram.com/wyn_social_bar" target="_blank" rel="noopener">@wyn_social_bar</a></p>
+        </div>
+      </div>
+      <div class="info__item">
+        <div class="info__icon">♠</div>
+        <div>
+          <h3>Вместимость</h3>
+          <p>До 80 гостей<br>VIP-зал для компаний</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS / PROMO ===== -->
+  <section class="news section" id="news">
+    <div class="container">
+      <h2 class="section__title"><span>♥</span> Новости и акции</h2>
+      <p class="section__sub">Следите за событиями — у нас всегда что-то происходит</p>
+      <div class="news__track" id="newsTrack"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__text">
+        <h2 class="section__title"><span>♠</span> Ставки сделаны</h2>
+        <p>WYN Social Bar — это лаундж в стиле классического казино: столы в форме игральных карт, глубокий бархат, приглушённый свет и золото деталей. Здесь не играют на деньги — здесь выигрывают вечер.</p>
+        <p>Собирайтесь компанией на матч, бронируйте VIP-зал на праздник или просто заходите на стейк и коктейль после работы.</p>
+        <ul class="about__features">
+          <li>📺 Спортивные трансляции на большом экране</li>
+          <li>🎱 Бильярд</li>
+          <li>🎲 Настольные игры</li>
+          <li>👑 VIP-зал</li>
+          <li>🥩 Стейки и авторская кухня</li>
+          <li>💳 Оплата картой, наличными и по QR</li>
+        </ul>
+      </div>
+      <div class="about__photo">
+        <img src="img/interior-cards.jpg" alt="Интерьер WYN — столы в форме игральных карт" loading="lazy">
+        <div class="about__photo-card">Столы — как игральные карты. Найдите свою масть.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <h2 class="section__title"><span>♦</span> Меню</h2>
+      <p class="section__sub">Кухня работает до последнего гостя</p>
+      <div class="menu__tabs" id="menuTabs"></div>
+      <div class="menu__list" id="menuList"></div>
+      <p class="menu__note">Полное меню — у официанта. Цены могут меняться.</p>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <h2 class="section__title"><span>♣</span> Атмосфера</h2>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--wide"><img src="img/sports-zone.jpg" alt="Зона спортивных трансляций" loading="lazy"><figcaption>Матчи на большом экране</figcaption></figure>
+        <figure class="gallery__item"><img src="img/billiards.jpg" alt="Бильярд в WYN" loading="lazy"><figcaption>Бильярд</figcaption></figure>
+        <figure class="gallery__item"><img src="img/food-caesar.jpg" alt="Цезарь с креветками" loading="lazy"><figcaption>Цезарь с креветками</figcaption></figure>
+        <figure class="gallery__item"><img src="img/food-tomyam.jpg" alt="Том-ям" loading="lazy"><figcaption>Том-ям</figcaption></figure>
+        <figure class="gallery__item"><img src="img/food-salmon.jpg" alt="Лосось на гриле" loading="lazy"><figcaption>Лосось на гриле</figcaption></figure>
+        <figure class="gallery__item gallery__item--wide"><img src="img/facade.jpg" alt="Фасад WYN Social Bar" loading="lazy"><figcaption>Ждём вас: ул. Турар Рыскулов, 1</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="booking section" id="booking">
+    <div class="container booking__grid">
+      <div class="booking__intro">
+        <h2 class="section__title"><span>♥</span> Забронировать стол</h2>
+        <p>Оставьте заявку — она откроется в WhatsApp, и администратор подтвердит бронь в течение нескольких минут.</p>
+        <p class="booking__phone">Или позвоните: <a href="tel:+77712569135">+7 771 256 91 35</a></p>
+      </div>
+      <form class="booking__form" id="bookingForm">
+        <div class="form__row">
+          <label>Имя<input type="text" name="name" required placeholder="Как к вам обращаться"></label>
+          <label>Гостей<input type="number" name="guests" min="1" max="80" value="2" required></label>
+        </div>
+        <div class="form__row">
+          <label>Дата<input type="date" name="date" required></label>
+          <label>Время<input type="time" name="time" required value="19:00"></label>
+        </div>
+        <label>Комментарий<textarea name="comment" rows="3" placeholder="VIP-зал, день рождения, стол у экрана…"></textarea></label>
+        <button type="submit" class="btn btn--gold btn--full">Отправить заявку в WhatsApp</button>
+        <p class="form__hint">Нажимая кнопку, вы откроете WhatsApp с готовым сообщением — останется только нажать «Отправить».</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS / MAP ===== -->
+  <section class="contacts section" id="contacts">
+    <div class="container contacts__grid">
+      <div class="contacts__info">
+        <h2 class="section__title"><span>♦</span> Как нас найти</h2>
+        <p><strong>ул. Турар Рыскулов, 1</strong><br>Есиль район, Астана, Z05X7E6</p>
+        <p>4 минуты пешком от остановки «Университет»<br>Рядом — 7 парковок</p>
+        <div class="contacts__links">
+          <a class="btn btn--ghost" href="https://2gis.kz/astana/firm/70000001115114309" target="_blank" rel="noopener">Открыть в 2ГИС</a>
+          <a class="btn btn--ghost" href="https://wa.me/77712569135" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="https://instagram.com/wyn_social_bar" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="contacts__map">
+        <iframe
+          src="https://maps.google.com/maps?q=51.086947,71.402891&z=16&output=embed"
+          loading="lazy" title="Карта: WYN Social Bar" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">WYN <em>social bar</em></span>
+        <p>Лаундж-бар · Астана · ул. Турар Рыскулов, 1</p>
+      </div>
+      <div class="footer__suits" id="footerSuits" title="">
+        <button data-suit="s">♠</button>
+        <button data-suit="h">♥</button>
+        <button data-suit="d">♦</button>
+        <button data-suit="c">♣</button>
+      </div>
+      <p class="footer__copy">© 2026 WYN Social Bar. Удача любит смелых.</p>
+    </div>
+  </footer>
+
+  <!-- ===== POKER EASTER EGG ===== -->
+  <div class="poker" id="poker" aria-hidden="true">
+    <div class="poker__backdrop" id="pokerBackdrop"></div>
+    <div class="poker__room">
+      <button class="poker__close" id="pokerClose" aria-label="Закрыть">✕</button>
+
+      <div class="poker__dealer">
+        <div class="dealer-avatar" id="dealerAvatar">
+          <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-label="Дилер">
+            <!-- hair back -->
+            <path d="M55 78 Q50 30 100 26 Q150 30 145 78 L148 132 Q149 150 138 158 L62 158 Q51 150 52 132 Z" fill="#16100e"/>
+            <!-- neck -->
+            <rect x="88" y="120" width="24" height="28" rx="10" fill="#e8b98f"/>
+            <!-- face -->
+            <ellipse cx="100" cy="88" rx="34" ry="40" fill="#f3c9a0"/>
+            <!-- hair front -->
+            <path d="M66 80 Q64 40 100 36 Q136 40 134 80 Q126 62 112 58 Q120 74 114 84 Q108 60 88 56 Q70 62 66 80 Z" fill="#16100e"/>
+            <!-- earrings -->
+            <circle cx="66" cy="102" r="4" fill="#d9b45b"/>
+            <circle cx="134" cy="102" r="4" fill="#d9b45b"/>
+            <!-- eyes -->
+            <g class="dealer-eyes">
+              <ellipse cx="86" cy="88" rx="6" ry="4.5" fill="#fff"/>
+              <ellipse cx="114" cy="88" rx="6" ry="4.5" fill="#fff"/>
+              <circle cx="86" cy="88.5" r="2.6" fill="#274e43"/>
+              <circle cx="114" cy="88.5" r="2.6" fill="#274e43"/>
+              <rect class="dealer-lid" x="78" y="80" width="16" height="0" rx="3" fill="#f3c9a0"/>
+              <rect class="dealer-lid" x="106" y="80" width="16" height="0" rx="3" fill="#f3c9a0"/>
+            </g>
+            <!-- brows -->
+            <path d="M78 78 Q86 74 94 77" stroke="#241a15" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M106 77 Q114 74 122 78" stroke="#241a15" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <!-- nose + lips -->
+            <path d="M100 92 Q98 100 100 104" stroke="#d9a273" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path class="dealer-lips" d="M90 112 Q100 120 110 112 Q100 116 90 112 Z" fill="#b3122f"/>
+            <!-- dress -->
+            <path d="M60 218 Q62 160 88 148 L100 156 L112 148 Q138 160 140 218 Z" fill="#123c36"/>
+            <path d="M88 148 L100 156 L112 148 L106 170 L94 170 Z" fill="#0c2a26"/>
+            <!-- bow tie -->
+            <path d="M100 150 L88 144 L88 158 Z" fill="#b3122f"/>
+            <path d="M100 150 L112 144 L112 158 Z" fill="#b3122f"/>
+            <circle cx="100" cy="151" r="3" fill="#d9b45b"/>
+            <!-- card in hand -->
+            <g class="dealer-card-hand">
+              <rect x="146" y="160" width="34" height="48" rx="5" fill="#f7f2e6" stroke="#c9a24b" stroke-width="1.5" transform="rotate(12 163 184)"/>
+              <text x="156" y="186" font-size="20" fill="#b3122f" transform="rotate(12 163 184)">♥</text>
+            </g>
+          </svg>
+        </div>
+        <div class="poker__speech" id="dealerSpeech">Добро пожаловать за мой стол.</div>
+      </div>
+
+      <div class="poker__table">
+        <div class="poker__hand poker__hand--dealer">
+          <span class="poker__hand-label">Дилер</span>
+          <div class="cards" id="dealerCards"></div>
+        </div>
+        <div class="poker__board">
+          <div class="cards" id="boardCards"></div>
+        </div>
+        <div class="poker__hand poker__hand--player">
+          <span class="poker__hand-label">Вы</span>
+          <div class="cards" id="playerCards"></div>
+        </div>
+      </div>
+
+      <div class="poker__controls" id="pokerControls">
+        <button class="btn btn--gold" id="pokerAction">Раздать карты</button>
+        <button class="btn btn--ghost" id="pokerFold" hidden>Сбросить</button>
+      </div>
+
+      <div class="poker__result" id="pokerResult" hidden></div>
+      <p class="poker__disclaimer">Игра бесплатная и без ставок — только на скидку. Одна скидка за визит, покажите экран официанту.</p>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/poker.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

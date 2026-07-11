@@ -342,25 +342,36 @@ a:hover { color: #e6c976; }
 .poker__close:hover { color: var(--cream); }
 
 .poker__dealer { display: flex; align-items: center; gap: 18px; margin-bottom: 10px; }
-.dealer-avatar { width: 110px; flex: none; position: relative; }
-.dealer-avatar img {
-  width: 110px; height: 110px; object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,162,75,.25), 0 10px 26px rgba(0,0,0,.55);
+/* дилер — игральная карта «Дама бубён» */
+.dealer-avatar { flex: none; position: relative; }
+.dealer-qcard {
+  width: 118px; height: 165px;
+  background: #f7f2e6;
+  border: 1.5px solid #d8cdb2;
+  border-radius: 10px;
+  padding: 24px 10px;
+  box-shadow: 0 0 0 2.5px rgba(201,162,75,.45), 0 12px 30px rgba(0,0,0,.55);
+  transform: rotate(-4deg);
+  transition: transform .3s;
+  animation: cardWiggle 5s ease-in-out infinite;
 }
-.dealer-avatar__badge {
-  position: absolute; right: -4px; bottom: -4px;
-  width: 34px; height: 34px;
-  display: grid; place-items: center;
-  background: #f7f2e6; color: var(--red);
+.dealer-qcard:hover { transform: rotate(0) scale(1.04); animation-play-state: paused; }
+.dealer-qcard img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 4px;
   border: 1.5px solid var(--gold);
-  border-radius: 8px;
-  font-size: 1.15rem; font-weight: 800;
-  box-shadow: 0 6px 14px rgba(0,0,0,.45);
-  animation: cardWiggle 3.4s ease-in-out infinite;
+  box-shadow: inset 0 0 0 1px rgba(201,162,75,.3);
 }
-@keyframes cardWiggle { 0%,100% { transform: rotate(0); } 50% { transform: rotate(-8deg); } }
+.dealer-qcard__index {
+  position: absolute; top: 4px; left: 7px;
+  color: #b3122f;
+  font-family: var(--font-display);
+  font-weight: 900; font-size: 1.05rem; line-height: .8;
+  display: flex; flex-direction: column; align-items: center;
+}
+.dealer-qcard__index em { font-style: normal; font-size: .8rem; }
+.dealer-qcard__index--bottom { top: auto; left: auto; bottom: 4px; right: 7px; transform: rotate(180deg); }
+@keyframes cardWiggle { 0%,100% { transform: rotate(-4deg); } 50% { transform: rotate(2deg); } }
 
 .poker__speech {
   position: relative;

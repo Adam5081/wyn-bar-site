@@ -204,10 +204,22 @@ section { scroll-margin-top: 64px; } /* якоря не прячутся под 
 .about__text p { color: #c9d2cc; margin-bottom: 16px; }
 .about__features { list-style: none; margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .about__features li {
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(201,162,75,.14);
-  border-radius: 10px; padding: 12px 16px; font-size: .92rem;
+  display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border: 1px solid rgba(201,162,75,.16);
+  border-radius: 12px; padding: 13px 16px; font-size: .92rem;
+  transition: border-color .25s, transform .25s;
 }
+.about__features li:hover { border-color: rgba(201,162,75,.45); transform: translateY(-2px); }
+.feat-icon {
+  width: 42px; height: 42px; flex: none;
+  display: grid; place-items: center;
+  color: var(--gold);
+  background: rgba(201,162,75,.08);
+  border: 1px solid rgba(201,162,75,.3);
+  border-radius: 11px;
+}
+.feat-icon svg { width: 22px; height: 22px; }
 .about__photo { position: relative; }
 .about__photo img { border-radius: var(--radius); box-shadow: var(--shadow); }
 .about__photo-card {
